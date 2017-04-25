@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ostn" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba8a3de8-8e15-4690-95c8-49eace811799">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_peserta.`nama` AS tb_peserta_nama,
+     tb_pendamping.`nama` AS tb_pendamping_nama,
+     tb_pendamping.`no_hp` AS tb_pendamping_no_hp,
+     tb_peserta.`bidang_lomba` AS tb_peserta_bidang_lomba,
+     tb_peserta.`provinsi` AS tb_peserta_provinsi,
+     tb_peserta.`jenkel` AS tb_peserta_jenkel,
+     tb_ketua_kontingen.`nama` AS tb_ketua_kontingen_nama,
+     tb_ketua_kontingen.`no_hp` AS tb_ketua_kontingen_no_hp
+FROM
+     `tb_peserta` tb_peserta,
+     `tb_pendamping` tb_pendamping,
+     `tb_ketua_kontingen` tb_ketua_kontingen]]>
+	</queryString>
+	<field name="tb_peserta_nama" class="java.lang.String"/>
+	<field name="tb_pendamping_nama" class="java.lang.String"/>
+	<field name="tb_pendamping_no_hp" class="java.lang.String"/>
+	<field name="tb_peserta_bidang_lomba" class="java.lang.String"/>
+	<field name="tb_peserta_provinsi" class="java.lang.String"/>
+	<field name="tb_peserta_jenkel" class="java.lang.String"/>
+	<field name="tb_ketua_kontingen_nama" class="java.lang.String"/>
+	<field name="tb_ketua_kontingen_no_hp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="aad055a8-c318-447f-bd94-cac82838ab05" style="Title" x="0" y="13" width="263" height="33"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Gray Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5078717c-a8f1-4444-800b-008880f993c0" style="SubTitle" x="117" y="46" width="157" height="22"/>
+				<textElement/>
+				<text><![CDATA[Leaf Gray SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="7f0fe6e0-145a-4a51-8c50-1fe7630ec427" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="8420ce1d-0c1e-4619-9731-3343b731542d" style="Column header" x="0" y="19" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[tb_peserta_nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="119e82cb-1d7b-4349-a102-629e9d46cbe6" style="Column header" x="69" y="19" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[tb_pendamping_nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="560fefb6-5b85-45b3-a654-1499b59c64b1" style="Column header" x="138" y="19" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[tb_pendamping_no_hp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2717ee7f-309c-4a7b-9129-23669a8f929f" style="Column header" x="207" y="19" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[tb_peserta_bidang_lomba]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d901bc9d-edf9-413f-a44d-ffe8186e37c3" style="Column header" x="276" y="19" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[tb_peserta_provinsi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7fc8c8d-ee22-4ce0-838d-3e52a20152bb" style="Column header" x="345" y="19" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[tb_peserta_jenkel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="445a1a34-0149-4e5b-b3a2-ab5322ddbb0f" style="Column header" x="414" y="19" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[tb_ketua_kontingen_nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ad0e2e13-46ad-438e-8209-14e73abd5dad" style="Column header" x="483" y="19" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[tb_ketua_kontingen_no_hp]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="d89372ff-83d6-4d96-b4a1-f7bb46336c8b" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="8d0306b9-e558-4fdf-a22b-753366b884c3" style="Detail" x="0" y="0" width="69" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tb_peserta_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="357c1396-7b07-4072-b2f8-201d31dca084" style="Detail" x="69" y="0" width="69" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tb_pendamping_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fcee865c-2198-4b67-9825-074b611d1c60" style="Detail" x="138" y="0" width="69" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tb_pendamping_no_hp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="06d25de5-73fa-48cb-a07e-673797666b3d" style="Detail" x="207" y="0" width="69" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tb_peserta_bidang_lomba}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9732bc34-b897-4be5-a78f-f7c8cf150f0a" style="Detail" x="276" y="0" width="69" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tb_peserta_provinsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="06934260-3832-454d-a731-08fee4fa066d" style="Detail" x="345" y="0" width="69" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tb_peserta_jenkel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0a72e51c-d072-4009-bbd8-4f53b083e5c6" style="Detail" x="414" y="0" width="69" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tb_ketua_kontingen_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="98dcf8c1-cf13-40a8-a2b4-d9455d943b65" style="Detail" x="483" y="0" width="69" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tb_ketua_kontingen_no_hp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="5d8d7ef6-79fb-4216-81de-1a739b96f828" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="fc7fbdd8-b753-440f-99b4-6c8455f8dd16" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="7b20ae0e-ff4c-410b-af00-0e0f1674a823" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="a7dda915-21a5-4fde-805d-fb30f1ad3774" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
